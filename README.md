@@ -145,14 +145,15 @@ Cuando integras `MarkerClustererF`, notarás esto:
 
 Esto ocurre automáticamente gracias al **algoritmo de agrupamiento espacial** que considera la proximidad en píxeles del viewport, no solo la distancia geográfica.
 
-## ⚙️ Impacto del clustering en el rendimiento
+### ⚙️ Impacto del clustering en el rendimiento
 
-| Escenario | Sin clustering | Con clustering | 
-|--|--|--|--|
-| 10–50 marcadores | OK | OK |
-| 100–500 marcadores | Comienza a ser pesado | Suave y fluido |
-|1,000+ marcadores | Muy lento, congelamientos| Fluido, agrupación automática|
-|UX |Caos visual | Limpio, organizado|
+| Escenario             | Sin clustering              | Con clustering                 |
+|-----------------------|-----------------------------|--------------------------------|
+| 10–50 marcadores      | OK                          | OK                             |
+| 100–500 marcadores    | Comienza a ser pesado       | Suave y fluido                 |
+| 1,000+ marcadores     | Muy lento, congelamientos   | Fluido, agrupación automática  |
+| UX (experiencia)      | Caos visual                 | Limpio, organizado             |
+
 
 ### 📌 Conclusión:
 
