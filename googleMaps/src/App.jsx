@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Mapa from './Mapa';
 import './App.css'
+import MapaConClusters from './MapaConClusters';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +22,11 @@ function App() {
       <div className="App">
         <h1>Mapa con Google Maps</h1>
         <Mapa />
+      </div>
+
+      <div className="App">
+        <h1>Mapa con Clusters</h1>
+        <MapaConClusters />
       </div>
     </>
   )

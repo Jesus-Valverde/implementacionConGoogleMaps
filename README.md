@@ -116,3 +116,46 @@ Esto abrirá la aplicación en `http://localhost:5173` (o un puerto similar).
 ### 5. 🧪 Verifica que todo funcione
 
 Abre tu navegador y deberías ver el mapa cargado, centrado en la ciudad definida, con un marcador que muestra un mensaje al hacer clic.
+
+
+# Mapa con clusters
+
+## 🧩 ¿Qué es `MarkerClustererF` y por qué es útil?
+
+`MarkerClustererF` es un componente que **agrupa automáticamente marcadores cercanos** en el mapa cuando hay muchos, especialmente en niveles de zoom bajos.
+
+### ✅ ¿Por qué es útil?
+
+-   **Mejora el rendimiento**: En lugar de renderizar cientos de marcadores individualmente, agrupa visualmente en uno solo con un contador.
+    
+-   **Mejor experiencia de usuario**: El mapa es más claro y no se satura con íconos superpuestos.
+    
+-   **Escalabilidad**: Puedes mostrar cientos o miles de puntos sin que el mapa se vuelva lento o ilegible.
+
+## 🔍 Visualización a diferentes niveles de zoom
+
+Cuando integras `MarkerClustererF`, notarás esto:
+
+-   **Zoom bajo (muy alejado)**: Verás burbujas con números como “10”, “25”, “40” que indican cuántos marcadores están agrupados.
+    
+-   **Zoom medio**: Empieza a dividir los grupos si están más separados.
+    
+-   **Zoom alto (muy cerca)**: Los marcadores individuales aparecen uno por uno.
+    
+
+Esto ocurre automáticamente gracias al **algoritmo de agrupamiento espacial** que considera la proximidad en píxeles del viewport, no solo la distancia geográfica.
+
+## ⚙️ Impacto del clustering en el rendimiento
+
+| Escenario | Sin clustering | Con clustering | 
+|--|--|--|--|
+| 10–50 marcadores | OK | OK |
+| 100–500 marcadores | Comienza a ser pesado | Suave y fluido |
+|1,000+ marcadores | Muy lento, congelamientos| Fluido, agrupación automática|
+|UX |Caos visual | Limpio, organizado|
+
+### 📌 Conclusión:
+
+-   Clustering permite renderizar **grandes cantidades de marcadores sin sacrificar rendimiento**.
+    
+-   Mantiene el mapa usable, especialmente en dispositivos móviles o con conexiones lentas.
